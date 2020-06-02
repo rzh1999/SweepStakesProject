@@ -10,6 +10,9 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
+            Contestant contestant = new Contestant();
+            Console.WriteLine($" Registration number equals {contestant.registrationNumber}");
+            Console.ReadLine();
         }
     }
 }

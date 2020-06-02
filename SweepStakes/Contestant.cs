@@ -12,7 +12,17 @@ namespace SweepStakes
         public string lastName;
         public string emailAddress;
         public int registrationNumber;
+        public Random random;
 
-        
+        public Contestant()
+        {
+            random = new Random();
+            registrationNumber = CreateRegistrationNumber();
+        }
+
+        public int CreateRegistrationNumber()
+        {
+            return random.Next(1000000, 2000000);
+        }
     }
 }
