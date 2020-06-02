@@ -8,7 +8,7 @@ namespace SweepStakes
 {
     public class SweepStake
     {
-        private Dictionary<int, Contestant> contestants;
+        private Dictionary<int, Contestant> _contestants;
 
         private string name;
         public string Name { get => name; set => name = value; }
@@ -16,7 +16,7 @@ namespace SweepStakes
 
         public SweepStake()
         {
-            contestants = new Dictionary<int, Contestant>();
+            _contestants = new Dictionary<int, Contestant>();
         }
         public string SweepStakes() {
             return UserInterface.GetSweepStakesName();
