@@ -40,5 +40,10 @@ namespace SweepStakes
 
             return _contestants[randomKey];
         }
+
+        public void PrintContestantInfo(Contestant contestant)
+        {
+            Console.WriteLine($"Contestant info: {contestant.registrationNumber} {contestant.firstName} {contestant.lastName}");
+        }
     }
 }
