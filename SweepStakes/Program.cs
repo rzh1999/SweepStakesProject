@@ -11,12 +11,15 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
-            //Contestant contestant = new Contestant();
-            //Console.WriteLine($" Registration number equals {contestant.registrationNumber}");
-            //UserInterface.GetFirstName();
-            SweepStake sweepstake = new SweepStake();
-            sweepstake.SweepStakes();
-            
+            ////Contestant contestant = new Contestant();
+            ////Console.WriteLine($" Registration number equals {contestant.registrationNumber}");
+            ////UserInterface.GetFirstName();
+            //SweepStake sweepstake = new SweepStake();
+            //sweepstake.SweepStakes();
+            Simulation simulation = new Simulation();
+            //Contestant contestant;
+            simulation.RunSweepStakes();
+           
             Console.ReadLine();
         }
     }

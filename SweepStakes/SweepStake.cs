@@ -16,6 +16,12 @@ namespace SweepStakes
             return UserInterface.GetSweepStakesName();
         }
 
-
+       public void RegisterContestant(Contestant contestant)
+        {
+            if (contestant != null)
+            {
+                contestants.Add(contestant.registrationNumber, contestant);
+            }
+        }
     }
 }
