@@ -10,16 +10,19 @@ namespace SweepStakes
     {
         private Stack<SweepStake> stack;
 
+        public SweepStakesStackManager()
+        {
+            stack = new Stack<SweepStake>();
+        }
         public void InsertSweepStakes(SweepStake sweepStake)
         {
-
+            stack.Push(sweepStake);
         }
 
         public SweepStake GetSweepStakes()
         {
-            //code here is just for removing error
-            SweepStake sweepStake = new SweepStake();
-            return sweepStake;
+            
+            return stack.Pop();
         }
 
 
