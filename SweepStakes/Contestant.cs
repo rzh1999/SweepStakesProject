@@ -14,8 +14,11 @@ namespace SweepStakes
         public int registrationNumber;
         public Random random;
 
-        public Contestant()
+        public Contestant(string firstName, string lastName, string emailAddress)
         {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.emailAddress = emailAddress;
             random = new Random();
             registrationNumber = CreateRegistrationNumber();
         }
@@ -24,5 +27,7 @@ namespace SweepStakes
         {
             return random.Next(1000000, 2000000);
         }
+
+
     }
 }
