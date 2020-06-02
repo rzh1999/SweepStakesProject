@@ -18,7 +18,8 @@ namespace SweepStakes
         {
             Console.WriteLine($"Please enter your last name.");
             string userInput = Console.ReadLine();
-            return userInput;
+            string results = DataValidation(userInput);
+            return results;
         }
 
         public static string GetFirstName()
@@ -33,7 +34,8 @@ namespace SweepStakes
         {
             Console.WriteLine($"Please enter your email address.");
             string userInput = Console.ReadLine();
-            return userInput;
+            string results = DataValidation(userInput);
+            return results;
         }
 
         public static string DataValidation(string userInput)
