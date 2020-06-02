@@ -16,6 +16,7 @@ namespace SweepStakes
         }
 
 
+       
         public void CreateContestant()
         {
             string firstName = UserInterface.GetFirstName();

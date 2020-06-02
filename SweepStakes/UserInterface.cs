@@ -46,6 +46,15 @@ namespace SweepStakes
             string results = DataValidation(userInput);
             return results;
         }
+
+        public static int HowManyContestants()
+        {
+            Console.WriteLine($"Please enter the name of your sweepstake.");
+            string userInput = Console.ReadLine();
+            string results = DataValidation(userInput);
+            int resultToInt = int.Parse(results);
+            return resultToInt;
+        }
         public static string DataValidation(string userInput)
         {
             while (String.IsNullOrEmpty(userInput))
