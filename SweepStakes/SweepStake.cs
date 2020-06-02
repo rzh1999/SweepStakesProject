@@ -9,9 +9,15 @@ namespace SweepStakes
     public class SweepStake
     {
         private Dictionary<int, Contestant> contestants;
+
         private string name;
         public string Name { get => name; set => name = value; }
+       
 
+        public SweepStake()
+        {
+            contestants = new Dictionary<int, Contestant>();
+        }
         public string SweepStakes() {
             return UserInterface.GetSweepStakesName();
         }

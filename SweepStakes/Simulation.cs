@@ -8,22 +8,20 @@ namespace SweepStakes
 {
     class Simulation
     {
-
         public void RunSweepStakes()
         {
-            CreateContestant();
+            
             
         }
 
-
-       
-        public void CreateContestant()
+     
+        public Contestant CreateContestant()
         {
             string firstName = UserInterface.GetFirstName();
             string lastName = UserInterface.GetLastName();
             string emailAddress = UserInterface.GetEmailAddress();
 
-            new Contestant(firstName, lastName, emailAddress);
+            return new Contestant(firstName, lastName, emailAddress);
             
         }
     }

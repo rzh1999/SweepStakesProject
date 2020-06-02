@@ -13,6 +13,7 @@ namespace SweepStakes
         public string emailAddress;
         public int registrationNumber;
         public Random random;
+        public int count;
 
         public Contestant(string firstName, string lastName, string emailAddress)
         {
@@ -21,6 +22,7 @@ namespace SweepStakes
             this.emailAddress = emailAddress;
             random = new Random();
             registrationNumber = CreateRegistrationNumber();
+            count++;
         }
 
         public int CreateRegistrationNumber()
