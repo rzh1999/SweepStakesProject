@@ -26,8 +26,19 @@ namespace SweepStakes
         {
             if (contestant != null)
             {
-                contestants.Add(contestant.registrationNumber, contestant);
+                _contestants.Add(contestant.registrationNumber, contestant);
             }
+        }
+
+        public Contestant PickWinner()
+        {
+            List<int> keyList = new List<int>(_contestants.Keys);
+
+            Random random = new Random();
+
+            int randomKey = keyList[random.Next(keyList.Count)];
+
+            return _contestants[randomKey];
         }
     }
 }
