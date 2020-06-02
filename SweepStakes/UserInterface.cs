@@ -36,8 +36,16 @@ namespace SweepStakes
             string userInput = Console.ReadLine();
             string results = DataValidation(userInput);
             return results;
+            //If time add code to validate if its a real email address
         }
 
+        public static string GetSweepStakesName()
+        {
+            Console.WriteLine($"Please enter the name of your sweepstake.");
+            string userInput = Console.ReadLine();
+            string results = DataValidation(userInput);
+            return results;
+        }
         public static string DataValidation(string userInput)
         {
             while (String.IsNullOrEmpty(userInput))
