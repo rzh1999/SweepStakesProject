@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,13 +25,24 @@ namespace SweepStakes
         {
             Console.WriteLine($"Please enter your first name.");
             string userInput = Console.ReadLine();
-            return userInput;
+            string results = DataValidation(userInput);
+            return results;
         }
 
         public static string GetEmailAddress()
         {
             Console.WriteLine($"Please enter your email address.");
             string userInput = Console.ReadLine();
+            return userInput;
+        }
+
+        public static string DataValidation(string userInput)
+        {
+            while (String.IsNullOrEmpty(userInput))
+            {
+                Console.WriteLine($"Please enter valid input");
+                userInput = Console.ReadLine();
+            }
             return userInput;
         }
     }
