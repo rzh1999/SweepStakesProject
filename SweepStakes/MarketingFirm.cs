@@ -21,8 +21,8 @@ namespace SweepStakes
         {
             string sweepStakesName = UserInterface.GetSweepStakesName();
             SweepStake sweepStake = new SweepStake(sweepStakesName);
-
-
+            //Then insert it using manager
+            _manger.InsertSweepStakes(sweepStake);
         }
     }
 }

@@ -46,5 +46,23 @@ namespace SweepStakes
         {
             Console.WriteLine($"Contestant info: {contestant.registrationNumber} {contestant.firstName} {contestant.lastName}");
         }
+
+        public void CreateContestant(int numberOfContestants)
+        {
+           
+            string firstName = null;
+            string lastName = null;
+            string emailAddress = null;
+            for (int i = 0; i < numberOfContestants; i++)
+            {
+                firstName = UserInterface.GetFirstName();
+                lastName = UserInterface.GetLastName();
+                emailAddress = UserInterface.GetEmailAddress();
+                Contestant contestant = new Contestant(firstName, lastName, emailAddress);
+                RegisterContestant(contestant);               
+            }
+
+
+        }
     }
 }
