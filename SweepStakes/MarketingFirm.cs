@@ -9,14 +9,19 @@ namespace SweepStakes
     public class MarketingFirm 
     {
         private ISweepStakesManager _manger;
-
+       
         public  MarketingFirm(ISweepStakesManager _manager)
         {
-
+           
         }
+
+       
 
         public void CreateSweepStakes()
         {
+            string sweepStakesName = UserInterface.GetSweepStakesName();
+            SweepStake sweepStake = new SweepStake(sweepStakesName);
+
 
         }
     }

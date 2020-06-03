@@ -46,7 +46,13 @@ namespace SweepStakes
             string results = DataValidation(userInput);
             return results;
         }
-
+        public static string GetMarketingFirmManager()
+        {
+            Console.WriteLine($"Enter Queue or Stack for sweepstakes management");
+            string userInput = Console.ReadLine();
+            string results = QueueOrStack(userInput);
+            return results;
+        }
         public static string DataValidation(string userInput)
         {
             while (String.IsNullOrEmpty(userInput))
@@ -54,6 +60,23 @@ namespace SweepStakes
                 Console.WriteLine($"Please enter valid input");
                 userInput = Console.ReadLine();
             }
+            return userInput;
+        }
+        public static ISweepStakesManager QueueOrStack(string userInput)
+        {
+
+            switch (userInput.ToLower())
+            {
+                case "queue":
+
+                    return new SweepStakesQueueManager();
+                case "stack":
+                    return new SweepStakesStackManager();
+                default:
+                    Console.WriteLine($"Please enter valid input");
+                    break;
+            }
+
             return userInput;
         }
     }

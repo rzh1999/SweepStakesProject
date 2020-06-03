@@ -14,8 +14,9 @@ namespace SweepStakes
         public string Name { get => name; set => name = value; }
        
 
-        public SweepStake()
+        public SweepStake(string name)
         {
+            this.Name = name;
             _contestants = new Dictionary<int, Contestant>();
         }
         public string SweepStakes() {
