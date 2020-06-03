@@ -10,18 +10,14 @@ namespace SweepStakes
     {
         public void RunSweepStakes()
         {
-            UserInterface.GetMarketingFirmManager();
+            
 
         }
 
         public void CreateMarketingFirmWithManager()
         {
-            string managerType = UserInterface.GetMarketingFirmManager();
-
-            if (Equals(managerType.ToLower(), "queue"))
-            {
-
-            }
+            var queueOrStack = UserInterface.QueueOrStack();
+            MarketingFirm marketingFirm = new MarketingFirm(queueOrStack);
         }
         public Contestant CreateContestant()
         {
