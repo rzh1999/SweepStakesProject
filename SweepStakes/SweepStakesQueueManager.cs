@@ -22,7 +22,7 @@ namespace SweepStakes
 
         public SweepStake GetSweepStakes()
         {
-            //Are we supposed to return more than one Sweepstake?
+           
             return queue.Dequeue();
         }
     }

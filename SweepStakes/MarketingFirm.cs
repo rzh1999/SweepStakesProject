@@ -12,7 +12,7 @@ namespace SweepStakes
        
         public  MarketingFirm(ISweepStakesManager _manager)
         {
-           
+            this._manger = _manager;
         }
 
        
