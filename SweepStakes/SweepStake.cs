@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace SweepStakes
 {
@@ -39,6 +41,11 @@ namespace SweepStakes
 
             int randomKey = keyList[random.Next(keyList.Count)];
 
+            
+            var maileMessage = BuildMessage(_contestants[randomKey]);
+
+            SendEmail(maileMessage);
+            
             return _contestants[randomKey];
         }
 
@@ -62,7 +69,32 @@ namespace SweepStakes
                 RegisterContestant(contestant);               
             }
 
+        }
 
+        public MimeMessage BuildMessage(Contestant contestant)
+        {
+            var mailMessage = new MimeMessage();
+            
+            mailMessage.From.Add(new MailboxAddress(contestant.firstName, contestant.emailAddress));
+            
+            mailMessage.To.Add(new MailboxAddress("Billy", "myemailtesterforschool@gmail.com"));
+            mailMessage.Subject = "Test";
+            mailMessage.Body = new TextPart("plain")
+            {
+                Text = "Hello"
+            };
+
+            return mailMessage;
+        }
+
+        public void SendEmail(MimeMessage mimeMessage)
+        {
+            var smtpClient = new SmtpClient();
+
+            smtpClient.Connect("smtp.gmail.com", 465, true);
+            smtpClient.Authenticate("myemailtesterforschool@gmail.com", "*******");
+            smtpClient.Send(mimeMessage);
+            smtpClient.Disconnect(true);
         }
     }
 }

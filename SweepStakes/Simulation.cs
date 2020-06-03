@@ -11,18 +11,20 @@ namespace SweepStakes
 
         public void RunSweepStakes()
         {
-            CreateMarketingFirmWithManager();
-            UserInterface.GetSweepStakesName();
+            //CreateMarketingFirmWithManager();
+            //UserInterface.GetSweepStakesName();
 
 
 
-            UserInterface.Greeting();
-            UserInterface.GetLastName();
-            UserInterface.GetFirstName();
-            UserInterface.GetEmailAddress();
+            //UserInterface.Greeting();
+            //UserInterface.GetLastName();
+            //UserInterface.GetFirstName();
+            //UserInterface.GetEmailAddress();
 
-            
+            SweepStake sweepStake = new SweepStake("billssweep");
 
+           var results =  sweepStake.BuildMessage();
+            sweepStake.SendEmail(results);
         }
 
         public void CreateMarketingFirmWithManager()
