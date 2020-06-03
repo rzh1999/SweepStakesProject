@@ -1,0 +1,2 @@
+I am using dependency injection with the QueOrStack()/CreateMarketingFirmWithManager() so when I create a new Marketing firm object it can be either 
+a stackmanager or a queuemanager.
