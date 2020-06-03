@@ -19,12 +19,17 @@ namespace SweepStakes
             var queueOrStack = UserInterface.QueueOrStack();
             MarketingFirm marketingFirm = new MarketingFirm(queueOrStack);
         }
-        public Contestant CreateContestant()
+        public Contestant CreateContestant(int numberOfContestants)
         {
-            string firstName = UserInterface.GetFirstName();
-            string lastName = UserInterface.GetLastName();
-            string emailAddress = UserInterface.GetEmailAddress();
-
+            string firstName = null;
+            string lastName = null;
+            string emailAddress = null;
+            for (int i = 0; i < numberOfContestants; i++)
+            {
+                firstName = UserInterface.GetFirstName();
+                lastName = UserInterface.GetLastName();
+                emailAddress = UserInterface.GetEmailAddress();
+            }
             return new Contestant(firstName, lastName, emailAddress);
             
         }
