@@ -71,6 +71,7 @@ namespace SweepStakes
 
         }
 
+        
         public MimeMessage BuildMessage(Contestant contestant)
         {
             var mailMessage = new MimeMessage();
