@@ -10,7 +10,7 @@ namespace SweepStakes
     {
         public void RunSweepStakes()
         {
-            
+            UserInterface.Greeting();
 
         }
 

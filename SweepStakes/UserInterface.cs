@@ -75,5 +75,23 @@ namespace SweepStakes
 
             return null;
         }
+
+        public static int HowManyContestantsToEnter()
+        {
+            Console.WriteLine($"Please enter how many contestants you want to create");
+            string userInput = Console.ReadLine();
+
+            bool result;
+            int choice;
+            result = int.TryParse(userInput, out choice);
+            while (!result)
+            {
+                Console.WriteLine($"Please enter a numerical value");
+                userInput = Console.ReadLine();
+                result = int.TryParse(userInput, out choice);
+            }
+
+            return choice;
+        }
     }
 }
